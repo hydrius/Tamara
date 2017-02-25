@@ -1,0 +1,9 @@
+setup.py
+Tamara/Brain.py
+Tamara/__init__.py
+Tamara/__main__.py
+Tamara_py.egg-info/PKG-INFO
+Tamara_py.egg-info/SOURCES.txt
+Tamara_py.egg-info/dependency_links.txt
+Tamara_py.egg-info/entry_points.txt
+Tamara_py.egg-info/top_level.txt
