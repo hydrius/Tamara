@@ -1,4 +1,4 @@
-from brain.brain import Brain
+from Tamara.brain.brain import Brain
 import threading
 import copy
 from queue import *
@@ -6,11 +6,11 @@ import time
 
 
 # List of sensors
-from brain.sensors.wifi import Wifi
+from Tamara.brain.sensors.wifi import Wifi
 
 # List of plugins
-from brain.plugins.greetings import Greetings
-from brain.plugins.clock import Clock
+from Tamara.brain.plugins.greetings import Greetings
+from Tamara.brain.plugins.clock import Clock
 
 
 
@@ -68,10 +68,6 @@ class Tamara(object):
         
         self.greetings.run(data)
         self.clock.run(data)
-
-
-def main():
-    app = Tamara()
 
 if __name__ == "__main__":
 
