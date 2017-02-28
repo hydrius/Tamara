@@ -1,10 +1,10 @@
 #!./bin/python
 
 import pkgutil
-from Tamara.brain.sensors.wifi import Wifi
+from brain.sensors.wifi import Wifi
 from queue import *
 import datetime
-from Tamara.brain.tts import GoogleTTS
+from brain.tts import GoogleTTS
 
 class Brain():
 

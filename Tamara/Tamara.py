@@ -1,4 +1,4 @@
-from Tamara.brain.brain import Brain
+from brain.brain import Brain
 import threading
 import copy
 from queue import *
@@ -6,11 +6,11 @@ import time
 
 
 # List of sensors
-from Tamara.brain.sensors.wifi import Wifi
+from brain.sensors.wifi import Wifi
 
 # List of plugins
-from Tamara.brain.plugins.greetings import Greetings
-from Tamara.brain.plugins.clock import Clock
+from brain.plugins.greetings import Greetings
+from brain.plugins.clock import Clock
 
 
 
