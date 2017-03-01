@@ -26,7 +26,7 @@ from Tamara.brain.plugins.clock import Clock
 class Tamara(object):
     def __init__(self):
         self.Tamara = Brain()
-        self.Tamara.say("What??? I am sentient?")
+        self.Tamara.say("Cash. me. outside. How. about. that!")
         self.run()
 
     def run(self):
