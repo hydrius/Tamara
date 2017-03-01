@@ -46,14 +46,13 @@ class Brain():
             #self.__logger__("Turning off")
             self.awake = 0
         elif now.hour >= 21 or now.hour < 9:
-            x = 0
-            #self.__logger__("Sleeping")
+            self.__logger__("Sleeping")
         elif (now.hour < 21 and now.hour >=9) and self.awake == 0:
-            #self.__logger__("Good morning")
+            self.__logger__("Good morning")
+            self.play("Good Morning, coffee?")
             x = 0
         elif now.hour < 21 and now.hour >= 9:
             return True
-        return True
 
 
     def __logger__(self, string, verbose=False):
