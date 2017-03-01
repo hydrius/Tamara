@@ -8,9 +8,9 @@ class Clock():
 
     def run(self, data):
         now = datetime.datetime.now().time()
-        if now.hour == 9 and now.minute == 45:
+        if now.hour == 16 and now.minute == 20:
             if not self.hasRun:
-                self.Tamara.say("Hey everyone... Happy 4 20")
+                self.Tamara.say(self.sayings())
                 self.hasRun = True
 
         if now.hour < 10:

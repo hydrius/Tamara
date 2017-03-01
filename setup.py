@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='Tamara',
-      version='0.0.13',
+      version='0.0.15',
       packages=['Tamara'],
       #package_dir = {'': 'Tamara'},
       entry_points={
