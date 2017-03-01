@@ -42,16 +42,16 @@ class Brain():
 
     def isAwake(self):
         now = datetime.datetime.now().time()
-        if (now.hour >= 5 or now.hour < 9) and self.awake == 1:
+        if (now.hour >= 21 or now.hour < 9) and self.awake == 1:
             #self.__logger__("Turning off")
             self.awake = 0
-        elif now.hour >= 5 or now.hour < 9:
+        elif now.hour >= 21 or now.hour < 9:
             x = 0
             #self.__logger__("Sleeping")
-        elif (now.hour < 5 and now.hour >=9) and self.awake == 0:
+        elif (now.hour < 21 and now.hour >=9) and self.awake == 0:
             #self.__logger__("Good morning")
             x = 0
-        elif now.hour < 5 and now.hour >= 9:
+        elif now.hour < 21 and now.hour >= 9:
             return True
         return True
 

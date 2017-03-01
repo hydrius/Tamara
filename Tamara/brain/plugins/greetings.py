@@ -28,12 +28,12 @@ class Greetings():
         filename = ""
         if name == "Master":
             self.Tamara.say("Welcome Home Master")
-            filename = "media/starwars.mp3"
+            filename = "/home/alarm/Tamara/Tamara/media/starwars.mp3"
         elif name == "Susan":
             self.Tamara.say("The wife is home")
-            filename = "media/tardis.mp3"
+            filename = "/home/alarm/Tamara/Tamara/media/tardis.mp3"
         elif name == "Dave":
-            filename = "media/spanishFlea.mp3"
+            filename = "/home/alarm/Tamara/Tamara/media/spanishFlea.mp3"
         elif name == "Sadie":
             speak = False
             self.Tamara.say("Oh no... Sadie is here... This means Sangria time!")
@@ -41,7 +41,7 @@ class Greetings():
             speak = False
             self.Tamara.say("Morgan is here. Time to get wrecked, cunt")
         elif name == "Aaron":
-            filename = "media/megaman.mp3"
+            filename = "/home/alarm/Tamara/Tamara/media/megaman.mp3"
 
         if speak:
             print(filename)
