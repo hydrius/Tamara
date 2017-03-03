@@ -26,7 +26,7 @@ from Tamara.brain.plugins.clock import Clock
 class Tamara(object):
     def __init__(self):
         self.Tamara = Brain()
-        self.Tamara.say("Cash. me. outside. How. about. that!")
+        self.Tamara.say("Cash me outside. How. about. that!")
         self.run()
 
     def run(self):
@@ -40,15 +40,18 @@ class Tamara(object):
 
         # Check to see if awake.
         # TODO: Add time awake settings
-        
+        timesPrinted = 0
         while True:
+            if timesPrinted == 0:
+                self.Tamara.__logger__("Running Modules")
+                timesPrinted = 1
+
             if self.Tamara.isAwake():
-                #self.Tamara.__logger__("Running Modules")
                 # return sensor data. 
                 data = self.Tamara.get_sensor_data()
                 if data is not None:
                     self.modules(data)
-            
+
             time.sleep(1)
             #else:
             #    self.Tamara.__logger__("Sleeping")

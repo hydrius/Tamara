@@ -12,7 +12,7 @@ class Brain():
     def __init__(self):
 
         self.__logger__("Brain initialised")
-
+        self.logStatus = 0
         # Load TTS
         self.tts = GoogleTTS() 
 
@@ -42,16 +42,20 @@ class Brain():
 
     def isAwake(self):
         now = datetime.datetime.now().time()
+
         if (now.hour >= 21 or now.hour < 9) and self.awake == 1:
-            #self.__logger__("Turning off")
+            self.__logger__("Turning off")
+            self.say("Good. night. sluts")
             self.awake = 0
         elif now.hour >= 21 or now.hour < 9:
+            self.awake = 0 #redundant
             self.__logger__("Sleeping")
         elif (now.hour < 21 and now.hour >=9) and self.awake == 0:
             self.__logger__("Good morning")
             self.play("Good Morning, coffee?")
-            x = 0
+            self.awake = 1
         elif now.hour < 21 and now.hour >= 9:
+            self.awake = 1 #redundant
             return True
 
 
