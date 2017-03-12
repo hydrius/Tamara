@@ -6,12 +6,12 @@ import time
 
 
 # List of sensors
-from Tamara.brain.sensors.wifi import Wifi
+from Tamara.sensors.wifi import Wifi
 
 # List of plugins
-from Tamara.brain.plugins.greetings import Greetings
-from Tamara.brain.plugins.clock import Clock
-from Tamara.brain.plugins.movement import Movement
+from Tamara.plugins.greetings import Greetings
+from Tamara.plugins.clock import Clock
+from Tamara.plugins.movement import Movement
 
 
 ###############################################################################
