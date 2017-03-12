@@ -17,8 +17,6 @@ class Greetings():
                 time_a = self.addressbook[key]["start"]
                 #print(time_a,time_b)
                 diff = (datetime.datetime.combine(datetime.date.min, time_a) - datetime.datetime.combine(datetime.date.min, time_b)).total_seconds()
-                if key == "Master":
-                    print(diff)
                 if diff > 900 and self.addressbook[key]["status"] == "1":
                     self.action(key)
             #except:

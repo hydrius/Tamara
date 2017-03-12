@@ -46,7 +46,7 @@ class Wifi(Thread):
                         self.data[name]["status"] = "1"
 
                 elif addr in output.decode("utf-8"):
-                    print(name, "is still online")
+                    #print(name, "is still online")
                     self.data[name]["finish"] = now
                     self.data[name]["status"] = "2"
 
