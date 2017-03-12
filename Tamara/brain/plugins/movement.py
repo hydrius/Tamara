@@ -1,7 +1,7 @@
 import serial
 
 
-class Tamaraduino():
+class Movement():
     def __init__(self, data, Tamara):
         self.data = data
         self.Tamara = Tamara
