@@ -11,7 +11,7 @@ from Tamara.brain.sensors.wifi import Wifi
 # List of plugins
 from Tamara.brain.plugins.greetings import Greetings
 from Tamara.brain.plugins.clock import Clock
-from Tamara.brain.plugins.movement import Tamaraduino
+from Tamara.brain.plugins.movement import Movement
 
 
 ###############################################################################
@@ -62,7 +62,7 @@ class Tamara(object):
         """
         self.clock = Clock(self.Tamara)
         self.greetings = Greetings(self.Tamara)
-        self.Arduino = Tamaraduino(data,self.Tamara)
+        self.Arduino = Movement(data,self.Tamara)
 
     def modules(self, data):
         """
