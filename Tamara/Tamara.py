@@ -62,7 +62,7 @@ class Tamara(object):
         """
         self.clock = Clock(self.Tamara)
         self.greetings = Greetings(self.Tamara)
-        self.Arduino = Movement(data,self.Tamara)
+        self.Arduino = Movement(self.Tamara)
 
     def modules(self, data):
         """

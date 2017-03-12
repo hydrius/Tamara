@@ -2,8 +2,8 @@ import serial
 
 
 class Movement():
-    def __init__(self, data, Tamara):
-        self.data = data
+    def __init__(self, Tamara):
+        #self.data = data
         self.Tamara = Tamara
         # serial address of arduino
         address = "/dev/ttyUSB0"
