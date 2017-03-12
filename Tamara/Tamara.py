@@ -6,7 +6,7 @@ import time
 
 
 # List of sensors
-from Tamara.sensors.wifi import Wifi
+from sensors.wifi import Wifi
 
 # List of plugins
 from Tamara.plugins.greetings import Greetings
