@@ -6,7 +6,7 @@ class Movement():
         #self.data = data
         self.Tamara = Tamara
         # serial address of arduino
-        address = "/dev/ttyUSB0"
+        address = "/dev/ttyUSB1"
 
         #initialise serial data
         self.ser = serial.Serial(address)
@@ -17,7 +17,7 @@ class Movement():
         serin = self.ser.readline().decode("utf-8")
 
         print(serin)
-        if serin == "movement":
+        if "movement" in serin:
             self.Tamara.say("movement")
 
 

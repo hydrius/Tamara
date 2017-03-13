@@ -6,7 +6,7 @@ import time
 
 
 # List of sensors
-from sensors.wifi import Wifi
+from Tamara.sensors.wifi import Wifi
 
 # List of plugins
 from Tamara.plugins.greetings import Greetings
@@ -26,7 +26,8 @@ from Tamara.plugins.movement import Movement
 class Tamara(object):
     def __init__(self):
         self.Tamara = Brain()
-        self.Tamara.say("Cash me outside. How. about. that!")
+        #self.Tamara.say("dave and sadie sitting in a tree, k. i. s. s. i. n. g.")
+        
         self.run()
 
     def run(self):
