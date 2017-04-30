@@ -12,7 +12,7 @@ from Tamara.sensors.wifi import Wifi
 from Tamara.plugins.greetings import Greetings
 from Tamara.plugins.clock import Clock
 from Tamara.plugins.movement import Movement
-
+from Tamara.plugins.ISS import SpaceStationNotifier
 
 ###############################################################################
 #
@@ -60,6 +60,7 @@ class Tamara(object):
         self.clock = Clock(self.Tamara)
         self.greetings = Greetings(self.Tamara)
         self.Arduino = Movement(self.Tamara)
+        self.SpaceStation = SpaceStationNotifier(self.Tamara)
 
     def modules(self, data):
         """
@@ -67,8 +68,9 @@ class Tamara(object):
         relevent module functions
         """
         self.greetings.run(data)
-        #self.clock.run(data)
+        self.clock.run(data)
         #self.Arduino.run()
+        self.SpaceStation.run()
 
 if __name__ == "__main__":
 
