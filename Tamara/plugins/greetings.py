@@ -5,22 +5,31 @@ class Greetings():
 
     def __init__(self, Tamara):
         self.Tamara = Tamara
+        #self.Tamara.__logger__("Greetings is online")
 
     def run(self, data):
-
         self.addressbook = data
-
+        if self.addressbook == None:
+            self.addressbook = {}
+        #try:
         for key, data in self.addressbook.items():
             #print(key,data)
             if "history" in self.addressbook[key]:
                 time_b = self.addressbook[key]["history"][-1][-1]
                 time_a = self.addressbook[key]["start"]
-                #print(time_a,time_b)
+
+                # diff(time_a - time_b)
                 diff = (datetime.datetime.combine(datetime.date.min, time_a) - datetime.datetime.combine(datetime.date.min, time_b)).total_seconds()
+                print(key)
+                print(diff)
+                print(self.addressbook[key]["status"])
                 if diff > 1200 and self.addressbook[key]["status"] == "1":
                     self.action(key)
             #except:
             #    pass
+        #except:
+        #    self.Tamara.__logger__("Data is likely None: sudo or internet issue")
+
     def action(self, name):
         speak = True
         filename = ""

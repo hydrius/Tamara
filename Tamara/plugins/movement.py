@@ -7,16 +7,24 @@ class Movement():
         #self.data = data
         self.Tamara = Tamara
         # serial address of arduino
+        # MOVE TO CONFIG ASAP
         address = "/dev/ttyUSB1"
 
         #initialise serial data
-        self.ser = serial.Serial(address)
+        try:
+            self.ser = serial.Serial(address)
+        except:
+            #
+            self.Tamara.__logger__("no port called " + address)
 
     def run(self):
         self.now = datetime.datetime.now().time()
 
         # serial in
-        serin = self.ser.readline().decode("utf-8")
+        try:
+            serin = self.ser.readline().decode("utf-8")
+        except:
+            serin = []
 
         print(serin)
         if "movement" in serin:

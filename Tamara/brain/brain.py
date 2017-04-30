@@ -14,24 +14,48 @@ class Brain():
         self.__logger__("Brain initialised")
         self.logStatus = 0
         # Load TTS
-        self.tts = GoogleTTS() 
+        self.tts = GoogleTTS()
+
+        # Checks to see if can speak
+        # Stable since 29th March
+        # Last tested on Lappy on 29th March
+
+        #self.say("You. All. Turn. Me. On.")
 
         # Set variables
         self.awake = 1
-        people = self.load_addressbook()
-        ignore = self.load_ignorelist()
+        self.people = self.load_addressbook()
+        self.ignore = self.load_ignorelist()
         #print(people)
+
+        self.load_modules()
+
+
+    def load_modules(self):
 
         # Add brain sensors - i.e functionality.
         self.q = Queue()
-        self.sensor = Wifi(people, self.q) # need to send address
+
+        #This will need sudo
+        self.sensor = Wifi() # need to send address
+        self.say("Wifi Sensor loaded")
+        ret = self.sensor.connected(self.people, self.q)
         self.sensor.start()
+        if ret == 0:
+            self.say("Sudo Make Me A Sandwich")
+
+
 
     def get_sensor_data(self):
+        #data = self.q.get_nowait()
         try:
             data = self.q.get_nowait()
+            #print(data)
             return data
-        except:
+
+        except Exception as e:
+            #print(e)
+            #print("data is not being received")
             pass
 
     def say(self, speech):

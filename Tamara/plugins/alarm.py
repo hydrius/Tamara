@@ -9,7 +9,10 @@ class AlarmPy():
         address = "/dev/ttyUSB0"
 
         #initialise serial data
-        self.ser = serial.Serial(address)
+        try:
+            self.ser = serial.Serial(address)
+        except SerialException:
+            print("No port", address)
 
     def run(self):
 

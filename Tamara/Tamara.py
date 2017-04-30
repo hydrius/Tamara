@@ -26,8 +26,6 @@ from Tamara.plugins.movement import Movement
 class Tamara(object):
     def __init__(self):
         self.Tamara = Brain()
-        #self.Tamara.say("dave and sadie sitting in a tree, k. i. s. s. i. n. g.")
-        
         self.run()
 
     def run(self):
@@ -46,12 +44,10 @@ class Tamara(object):
             if timesPrinted == 0:
                 self.Tamara.__logger__("Running Modules")
                 timesPrinted = 1
-
             if self.Tamara.isAwake():
                 # return sensor data. 
                 data = self.Tamara.get_sensor_data()
-                if data is not None:
-                    self.modules(data)
+                self.modules(data)
 
             time.sleep(1)
             #else:
@@ -70,10 +66,10 @@ class Tamara(object):
         After importing modules, simply send data to
         relevent module functions
         """
-        
         self.greetings.run(data)
-        self.clock.run(data)
-        self.Arduino.run()
+        #self.clock.run(data)
+        #self.Arduino.run()
+
 if __name__ == "__main__":
 
     # Check Network

@@ -5,6 +5,7 @@ class Clock():
     def __init__(self, Tamara):
         self.Tamara = Tamara
         self.hasRun = False
+        self.Tamara.__logger__("Clock is online")
 
     def run(self, data):
         now = datetime.datetime.now().time()
