@@ -76,7 +76,7 @@ class Brain():
             #self.__logger__("Sleeping")
         elif (now.hour < 21 and now.hour >=9) and self.awake == 0:
             self.__logger__("Good morning")
-            self.play("Good Morning, coffee?")
+            self.say("Good Morning, coffee?")
             self.awake = 1
         elif now.hour < 21 and now.hour >= 9:
             self.awake = 1 #redundant
