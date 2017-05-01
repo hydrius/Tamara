@@ -9,7 +9,7 @@ class Clock():
 
     def run(self, data):
         now = datetime.datetime.now().time()
-        if now.hour == 16 and now.minute == 2:
+        if now.hour == 16 and now.minute == 20:
             if not self.hasRun:
                 time_str = now.strftime("%Y-%m-%d %H:%M:%S")
                 self.Tamara.__logger__(f"{time_str}: 420"),
