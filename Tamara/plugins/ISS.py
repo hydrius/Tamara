@@ -27,7 +27,6 @@ class SpaceStationNotifier():
             for flight in self.data["response"]:
                 flyover_epoch = flight["risetime"]
 
-
                 # All epoch times are GMT
                 #print("-------------------------")
                 #print(flyover_epoch)
@@ -37,8 +36,14 @@ class SpaceStationNotifier():
                 #print("--------------------------")
                 #print("--------------------------")
 
+                if flyover_epoch - now_epoch < 600:
+                    if self.prev != flyover_epoch:
+                        self.hasRun = False
+                        self.prev = flyover_epoch
+
                 if flyover_epoch - now_epoch < 600 and self.hasRun == False:
                     self.Tamara.say("Ten minutes until space station visible")
+                    self.prev = flyover_epoch
                     self.hasRun = True
 
                 if flyover_epoch - now_epoch < 10 and flyover_epoch - now_epoch > 0 and self.hasRun == True:
