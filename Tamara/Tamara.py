@@ -34,16 +34,17 @@ class Tamara(object):
         """
 
         # Set up modules for initialisation
-        self.Tamara.__logger__("Set up Modules")
+        self.Tamara.__logger__("Setting up Modules")
         self.setup()
 
         # Check to see if awake.
         # TODO: Add time awake settings
-        timesPrinted = 0
+        printOnce = 0
         while True:
-            if timesPrinted == 0:
+            if printOnce == 0:
                 self.Tamara.__logger__("Running Modules")
-                timesPrinted = 1
+                printOnce = 1
+
             if self.Tamara.isAwake():
                 # return sensor data. 
                 data = self.Tamara.get_sensor_data()
@@ -69,7 +70,7 @@ class Tamara(object):
         """
         self.greetings.run(data)
         self.clock.run(data)
-        #self.Arduino.run()
+        self.Arduino.run()
         self.SpaceStation.run()
 
 if __name__ == "__main__":
