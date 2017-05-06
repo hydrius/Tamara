@@ -41,15 +41,14 @@ class SpaceStationNotifier():
                         self.hasRun = False
                         self.prev = flyover_epoch
 
-                if flyover_epoch - now_epoch < 600 and self.hasRun == False:
+                if flyover_epoch - now_epoch < 600 and flyover_epoch - now_epoch > 555:
                     self.Tamara.say("Ten minutes until space station visible")
                     self.prev = flyover_epoch
                     self.hasRun = True
 
                 if flyover_epoch - now_epoch < 10 and flyover_epoch - now_epoch > 0 and self.hasRun == True:
                     seconds = int(flyover_epoch - now_epoch)
-
-                    self.Tamara.say(f"{seconds}")
+                    self.Tamara.say(f"{seconds} until international space station flies over")
 
 
 

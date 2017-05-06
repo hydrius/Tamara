@@ -2,7 +2,7 @@
 
 import pkgutil
 from Tamara.sensors.wifi import Wifi
-from Tamara.sensors.listen import Listen
+#from Tamara.sensors.listen import Listen
 from queue import *
 import datetime
 from Tamara.brain.tts import GoogleTTS
@@ -34,7 +34,7 @@ class Brain():
         #print(people)
 
         self.load_modules()
-
+        
 
     def load_modules(self):
 
@@ -44,7 +44,7 @@ class Brain():
 
         #This will need sudo
         self.wifi = Wifi() # need to send address
-        self.listen = Listen()
+        #self.listen = Listen()
 
         ret = self.wifi.connected(self.people, self.q_wifi)
         if ret == 0:
@@ -54,7 +54,7 @@ class Brain():
             self.__logger__(f"Wifi sensor connected successfully:result is {ret} == 1")
 
         self.wifi.start()
-        self.listen.start()
+        #self.listen.start()
 
 
     def get_sensor_data(self):
@@ -84,12 +84,14 @@ class Brain():
             self.__logger(f"{now.hour}:{now.minute}")
 
         if (now.hour >= 21 or now.hour < 9) and self.awake == 1:
-            self.say("Good. night. sluts")
+            self.__logger__("Good Night Sluts")
+            self.say("Good night sluts")
             self.awake = 0
         elif now.hour >= 21 or now.hour < 9:
             self.awake = 0 #redundant
             #self.__logger__("Sleeping")
         elif (now.hour < 21 and now.hour >=9) and self.awake == 0:
+            self.__logger__("Good morning everyone")
             self.say("Good Morning, coffee?")
             self.awake = 1
         elif now.hour < 21 and now.hour >= 9:
