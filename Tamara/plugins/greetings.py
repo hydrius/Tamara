@@ -20,10 +20,11 @@ class Greetings():
 
                 # diff(time_a - time_b)
                 diff = (datetime.datetime.combine(datetime.date.min, time_a) - datetime.datetime.combine(datetime.date.min, time_b)).total_seconds()
-                print(key)
-                print(diff)
-                print(self.addressbook[key]["status"])
-                if diff > 1200 and self.addressbook[key]["status"] == "1":
+                #print(key)
+                #print(diff)
+                #print(self.addressbook[key]["status"])
+                if diff > 900 and self.addressbook[key]["status"] == "1":
+                    self.Tamara.__logger__(f"{key} is online after {int(diff)/60} minutes of inactivity")
                     self.action(key)
             #except:
             #    pass
@@ -51,5 +52,5 @@ class Greetings():
             filename = "/home/alarm/Tamara/Tamara/media/megaman.mp3"
 
         if speak:
-            print(filename)
+            self.Tamara.__logger__(filename)
             self.Tamara.play(filename)

@@ -44,7 +44,7 @@ class Wifi(Thread):
 
                     # This should always be True
                     if name not in self.data["online"]:
-                        print(name + " is online")
+                        #print(name + " is online")
 
                         self.data["online"].append(name)
 
@@ -59,7 +59,7 @@ class Wifi(Thread):
 
                 # Still online
                 elif addr in output.decode("utf-8"):
-                    print(name + " is still online")
+                    #print(name + " is still online")
 
                     self.data[name]["start"] = now
                     self.data[name]["history"].append([now,now])
@@ -68,7 +68,7 @@ class Wifi(Thread):
                 elif not addr in output.decode("utf-8") and (self.data[name]["status"] == "1" or self.data[name]["status"] == "2"):
                     #User has disconnected
                     if name in self.data["online"]:
-                        print(name,"disconnected")
+                        #print(name,"disconnected")
 
                         self.data["online"].remove(name)
                         self.data[name]["status"] = "0"
@@ -100,7 +100,7 @@ class Wifi(Thread):
                 if self.data[key]["start"] > 100:
                     print("delete the last 90 values")
                     # Delete last 90 values 
-                    # But somehow get total time acrued.
+                                 # But somehow get total time acrued.
 
             except:
                 pass

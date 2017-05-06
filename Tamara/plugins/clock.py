@@ -18,6 +18,11 @@ class Clock():
 
         if now.hour < 10:
             self.hasRun = False
+            if self.resetMsg == True:
+               self.Tamara.__logger__("Clock > hasRun has been reset")
+               self.resetMsg = False
+            if now.minute == 59:
+                self.resetMsg = True
 
     def sayings(self):
         lines = ["Happy four twenty", 
