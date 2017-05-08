@@ -81,7 +81,7 @@ class Brain():
         now = datetime.datetime.now().time()
 
         if now.minute == 0:
-            self.__loggeri__(f"{now.hour}:{now.minute}")
+            self.__logger__(f"{now.hour}:{now.minute}")
 
         if (now.hour >= 21 or now.hour < 9) and self.awake == 1:
             self.__logger__("Good Night Sluts")
